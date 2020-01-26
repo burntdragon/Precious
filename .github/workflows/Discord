@@ -1,0 +1,31 @@
+name: CI
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+   - name: Discord Message Notify
+  uses: burntdragon/Precious
+  with:
+    # discord webhook id
+    webhook_id: https://discordapp.com/api/webhooks/670796124549808168/7rtSvD0h7IK8D6w7d6DbAHGEtNTu5OmLdlhfUEpx5jG4Dc6tGgw20C3Fq8AaKDAl5oAs
+    # discord webhook token
+    webhook_token: 
+    # the message contents (up to 2000 characters)
+    message: "test"
+    # the contents of the file being sent
+    file: # optional
+    # color code of the embed
+    color: # optional
+    # waits for server confirmation of message send before response, and returns the created message body
+    wait: # optional
+    # true if this is a TTS message
+    tts: # optional
+    # override the default username of the webhook
+    username: # optional
+    # override the default avatar of the webhook
+    avatar_url: # optional
