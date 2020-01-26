@@ -11,6 +11,6 @@ jobs:
     - name: Discord notification
   env:
     DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
-  uses: burntdragon/actions
+  uses: burntdragon/Precious/
   with:
     args: 'The project {{ EVENT_PAYLOAD.repository.full_name }} has been deployed.'
