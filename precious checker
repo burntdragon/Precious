@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<!-- saved from url=(0028)http://theblackflame.x10.mx/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+	</head>
+	<body>
+		<section>
+			<p id="rates">metal:<br>chemical: <br>organic: <br>precious: <br>energy: <br>slaves: <br>weapons: <br></p>
+		</section>
+		<script>
+			var section = document.querySelector('section');
+			
+			var myHeaders = new Headers();
+			myHeaders.append("Content-Type", "application/x-www-form-urlencoded");
+
+			var urlencoded = new URLSearchParams();
+			urlencoded.append("token", "8fb134f258b1f7865a6ab2d935a897c9");
+
+			var requestOptions = {
+			  method: 'POST',
+			  headers: myHeaders,
+			  body: urlencoded,
+			  redirect: 'follow'
+			};
+			fetch('https://api.textspaced.com/market/commodities/', requestOptions)
+			  .then(function(response) {
+					return response.json();
+			}).then(function(json) {
+					populatelist(json);
+			}).catch(error => console.log('error', error));
+			
+
+			
+			function populatelist(jsonObj) {
+				var i, x = "";
+				var j = 1000;
+				for (i in jsonObj[0]){
+					x += jsonObj[0][i].name + ': ' + jsonObj[0][i].rate.toFixed(2) + "<br>";
+					if(jsonObj[0][i].name == "precious"){
+					if(jsonObj[0][i].rate.toFixed(2) > 15) {
+						window.alert("Precious is " + jsonObj[0][i].rate.toFixed(2) )
+						}
+					}
+				}
+				
+				document.getElementById("rates").innerHTML = x;
+				/*
+				var par1 = document.createElement('p');
+				par1.textContent = jsonObj[0]["1"].name + ': ' + jsonObj[0]["1"].rate.toFixed(2);
+				section.appendChild(par1); */
+			}
+		</script>
+	
+</body></html>
