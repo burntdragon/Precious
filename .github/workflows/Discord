@@ -12,9 +12,9 @@ jobs:
   uses: burntdragon/Precious
   with:
     # discord webhook id
-    webhook_id: https://discordapp.com/api/webhooks/670796124549808168/7rtSvD0h7IK8D6w7d6DbAHGEtNTu5OmLdlhfUEpx5jG4Dc6tGgw20C3Fq8AaKDAl5oAs
+    webhook_id: 670796124549808168
     # discord webhook token
-    webhook_token: 
+    webhook_token: 7rtSvD0h7IK8D6w7d6DbAHGEtNTu5OmLdlhfUEpx5jG4Dc6tGgw20C3Fq8AaKDAl5oAs
     # the message contents (up to 2000 characters)
-    message: "test"
+    message: test
  
